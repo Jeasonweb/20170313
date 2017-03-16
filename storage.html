@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>存储</title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+		var JZ={
+			setStorage:function(){
+				localStorage.setItem(arguments[0],arguments[1]);
+			},
+			getStorage:function(){
+				return localStorage.getItem(arguments[0]);
+			},
+			clearStorage:function(){
+				if(arguments.length==1){
+					localStorage.removeItem(arguments[0]);				
+				}else if(arguments.length==0){
+					localStorage.clear();					
+				}
+				return true;
+			},
+		}
+		window.onstorage=function(){
+			
+		};
+		var Debug = {
+			write:function() {
+				console.log(arguments[0]);
+			},
+			alert:function(){
+				alert(arguments[0]);
+			}
+		}
+		JZ.setStorage('myTempName','Jeason');
+		
+		var tempStr=JZ.getStorage('myTempName');
+		
+		/*alert(tempStr);*/
+		
+		Debug.write('the value of JZ.getStorage is '+tempStr);
+		
+		JZ.clearStorage('myTempName');
+		
+</script>
