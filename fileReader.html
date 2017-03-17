@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>读取文件</title>
+		<style type="text/css">
+			img{
+				width: 50px;
+				height: 50px;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="images/overlay_bg.png"/>
+		<input type="file" id="file" onchange="handleFiles(this.files)" style="display: none;"/>
+	</body>
+</html>
+<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	function handleFiles(files) {
+    	if (files.length) {
+	        var file = files[0];
+	        var reader = new FileReader();
+	        if (/text\/\w+/.test(file.type)) {
+	            reader.onload = function() {
+	                $('<pre>' + this.result + '</pre>').appendTo('body');
+	            }
+	            reader.readAsText(file);
+	        } else if(/image\/\w+/.test(file.type)) {
+	            reader.onload = function() {
+	               /* $('<img src="' + this.result + '"/>').appendTo('body');*/
+	              $('img').attr('src',this.result);
+	            }
+	            reader.readAsDataURL(file);
+	        }
+	    }
+	}
+	$('img').on('click',function(){
+		$('#file').click();
+	})
+</script>
