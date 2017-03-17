@@ -1,0 +1,29 @@
+{
+  "name": "20170313",
+  "version": "1.0.0",
+  "description": "这是一个gulp管控项目",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-livereload": "^3.8.1",
+    "gulp-webserver": "^0.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeasonweb/20170313.git"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "Jeason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeasonweb/20170313/issues"
+  },
+  "homepage": "https://github.com/Jeasonweb/20170313#readme"
+}
